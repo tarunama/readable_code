@@ -22,7 +22,7 @@ function judge_customer_rank($user_info){
 function judge_detail($user_info){
     $rank = 0;
     $diff = 1;
-    // 女性の時
+    // 女性の時は消費力があることにする
     if($user_info['gender'] === 2) $diff = 1.2;
 
     if($user_info['sum_per_month']       < $sum_month * $diff) $rank += 1;
