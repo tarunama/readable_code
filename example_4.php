@@ -5,6 +5,7 @@ require_once '../database/database.php';
 // ユーザー情報を取得
 function set_keys_for_query($_POST)
 {
+    // ユーザー情報を設定
     $ary['user_id']     = $_POST['user_id'];
     $ary['user_name']   = $_POST['user_name'];
     $ary['create_date'] = $_POST['create_date'];
@@ -17,7 +18,7 @@ function judge_customer_rank($user_info)
     // 除外条件先に書く
     if($user_info['sum_per_month'] < 5000) return false;
     if($user_info['has_card'] === false) return false;
-
+    // ここは２行にする意味ある？
     $user_rank = judge_detail($user_info);
     return $user_rank;
 }
@@ -32,7 +33,7 @@ function judge_detail($user_info)
     $price_in_once = 5000;
     // 女性の場合、消費が多いことにする
     if($user_info['gender'] === 2) $diff = 1.2;
-
+    // ランク加算部分
     if($user_info['sum_per_month']       < $sum_month * $diff) $rank += 1;
     if($user_info['buy_times_per_month'] < $times_month * $diff) $rank += 2;
     if($user_info['buy_price_in_once']   < $price_in_once * $diff) $rank += 3;
