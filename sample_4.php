@@ -13,16 +13,7 @@ $ret = $this->database($sql);
 if($ret['sum'] >= 5000){
 	// 性別が男性だった場合
 	if($ret['gender'] == 1){
-		// 購入したチャネルによって分岐
 		if($ret['chnnl'] == '1'){
-			if($ret['sum'] >= 100000){
-				$txt = "VIP会員" . $prm['name'] . "様\n";
-				$vip = 1;
-			}else{
-				$txt = $prm['name'] . "さん\n";
-				$vip = 0;
-			}
-		}elseif($ret['chnnl'] == '2'){
 			if($ret['sum'] >= 100000){
 				$txt = "VIP会員" . $prm['name'] . "様\n";
 				$vip = 1;
@@ -31,17 +22,9 @@ if($ret['sum'] >= 5000){
 				$vip = 0;
 			}
 		}
+	// 性別が女性だった場合
 	}else{
-		// 購入したチャネルによって分岐
 		if($ret['chnnl'] == '1'){
-			if($ret['sum'] >= 100000){
-				$txt = "VIP会員" . $prm['name'] . "様\n";
-				$vip = 1;
-			}else{
-				$txt = $prm['name'] . "さん\n";
-				$vip = 0;
-			}
-		}elseif($ret['chnnl'] == '2'){
 			if($ret['sum'] >= 100000){
 				$txt = "VIP会員" . $prm['name'] . "様\n";
 				$vip = 1;
