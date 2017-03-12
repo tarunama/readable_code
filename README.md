@@ -1,8 +1,9 @@
-readable_code
-=============
+# 株式会社ドリームシアター様での勉強会資料
 
-株式会社ドリームシアター様での勉強会資料
+## 構成
+problem.php => 改善前のPHPファイル
+refactored.php => 改善後のPHPファイル
 
-練習用コード置場  
+## 参考
 PHP命名規則  
 http://git.php.net/?p=php-src.git;a=blob_plain;f=CODING_STANDARDS;hb=HEAD
